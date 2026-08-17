@@ -38,6 +38,7 @@ function App() {
   const [ran, setRan] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [editableCode, setEditableCode] = useState(code)
 
   const visibleProblems = problems.filter(p => {
     const matchesSearch = p.title.toLowerCase().includes(search.toLowerCase())
@@ -82,9 +83,8 @@ function App() {
 
       <section className="editor-panel">
         <div className="editor-head"><div className="file-tab"><span className="js-icon">JS</span> solution.js <button>×</button></div><div className="editor-tools"><select value={language} onChange={e => setLanguage(e.target.value)}><option>JavaScript</option><option>Python</option><option>TypeScript</option></select><button onClick={copyCode}>⧉</button><button>⚙</button></div></div>
-        <div className="editor"><div className="line-numbers">{code.split('\n').map((_, i) => <span key={i}>{String(i + 1).padStart(2, '0')}</span>)}</div><pre><code>{code.split(/(function|const|for|if|return|new|Map)/g).map((part, i) => <span key={i} className={['function','const','for','if','return','new','Map'].includes(part) ? 'syntax-keyword' : ''}>{part}</span>)}</code></pre></div>
+        <textarea className="editor-textarea" value={editableCode} onChange={e => setEditableCode(e.target.value)} spellCheck="false"></textarea>
         <div className="test-panel"><div className="test-head"><div><button className="test-tab active">Testcase</button><button className="test-tab">Test Result</button></div><button className="collapse">⌄</button></div><div className="test-input"><label>nums <span>ⓘ</span></label><div>[2, 7, 11, 15]</div><label>target <span>ⓘ</span></label><div>9</div></div>{ran && <div className="result"><span>✓</span> Accepted <small>Runtime: 68 ms · Memory: 46.2 MB</small></div>}</div>
-        <div className="run-bar"><button className="run-button" onClick={() => setRan(true)}><Icon>▶</Icon> Run code</button><button className="submit-button" onClick={() => setSubmitted(true)}>{submitted ? 'Submitted ✓' : 'Submit solution'} <Icon>→</Icon></button></div>
       </section>
     </main>
   </div>
