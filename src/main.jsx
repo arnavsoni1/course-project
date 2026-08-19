@@ -15,6 +15,7 @@ const problems = [
 const code = `function twoSum(nums, target) {
   const seen = new Map();
 
+  //verification - editable textbox
   for (let i = 0; i < nums.length; i++) {
     const complement = target - nums[i];
 
