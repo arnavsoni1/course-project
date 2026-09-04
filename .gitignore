@@ -25,5 +25,6 @@ pnpm-debug.log*
 .vscode/
 .idea/
 .DS_Store
+*:Zone.Identifier
 *.swp
 *.swo

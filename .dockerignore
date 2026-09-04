@@ -1,0 +1,17 @@
+.git
+.gitignore
+.agents
+.codex
+.github
+.vscode
+.idea
+node_modules
+dist
+coverage
+*.log
+.env
+.env.*
+docker_assessment_intructions.pdf
+docker_assessment_intructions.pdf:Zone.Identifier
+submission
+README.md
