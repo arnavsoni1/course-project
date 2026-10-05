@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1630" height="1490" viewBox="0 0 1630 1490">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#18304b"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#18304b}.title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:16px}.small{font-size:14px;fill:#536779}.label{font-size:15px;fill:#1469a8;font-weight:600}</style>
+<text x="48" y="55" class="title">Sequence diagram · student practice session</text>
+<rect x="5" y="95" width="230" height="56" rx="5" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="120" y="130" text-anchor="middle" class="head">Student</text>
+<line x1="120" y1="151" x2="120" y2="1430" stroke="#536779" stroke-width="1.5" stroke-dasharray="7 6"/>
+<rect x="315" y="95" width="230" height="56" rx="5" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="430" y="130" text-anchor="middle" class="head">React UI</text>
+<line x1="430" y1="151" x2="430" y2="1430" stroke="#536779" stroke-width="1.5" stroke-dasharray="7 6"/>
+<rect x="645" y="95" width="230" height="56" rx="5" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="760" y="130" text-anchor="middle" class="head">API handler</text>
+<line x1="760" y1="151" x2="760" y2="1430" stroke="#536779" stroke-width="1.5" stroke-dasharray="7 6"/>
+<rect x="965" y="95" width="230" height="56" rx="5" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="1080" y="130" text-anchor="middle" class="head">Problem store</text>
+<line x1="1080" y1="151" x2="1080" y2="1430" stroke="#536779" stroke-width="1.5" stroke-dasharray="7 6"/>
+<rect x="1315" y="95" width="230" height="56" rx="5" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="1430" y="130" text-anchor="middle" class="head">SQLite repository</text>
+<line x1="1430" y1="151" x2="1430" y2="1430" stroke="#536779" stroke-width="1.5" stroke-dasharray="7 6"/>
+<line x1="120" y1="205" x2="415" y2="205" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="275.0" y="195" text-anchor="middle" class="body">Open practice page</text>
+<line x1="430" y1="250" x2="745" y2="250" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="595.0" y="240" text-anchor="middle" class="body">GET /api/problems</text>
+<line x1="760" y1="295" x2="1065" y2="295" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="920.0" y="285" text-anchor="middle" class="body">Read shared problems</text>
+<line x1="1080" y1="340" x2="775" y2="340" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="920.0" y="330" text-anchor="middle" class="body">Problem list</text>
+<line x1="760" y1="385" x2="445" y2="385" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="595.0" y="375" text-anchor="middle" class="body">200 + problem list</text>
+<line x1="430" y1="430" x2="135" y2="430" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="275.0" y="420" text-anchor="middle" class="body">Show catalogue and editor</text>
+<rect x="35" y="465" width="1555" height="205" rx="0" fill="none" stroke="#536779" stroke-width="1.5"/>
+<rect x="35" y="465" width="90" height="28" rx="0" fill="#e8f3fb" stroke="#536779" stroke-width="1"/>
+<text x="80" y="485" text-anchor="middle" class="label">opt  Run sample</text>
+<line x1="120" y1="515" x2="415" y2="515" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="275.0" y="505" text-anchor="middle" class="body">Click Run</text>
+<line x1="430" y1="560" x2="745" y2="560" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="595.0" y="550" text-anchor="middle" class="body">POST /api/run (heuristic)</text>
+<line x1="760" y1="605" x2="1065" y2="605" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="920.0" y="595" text-anchor="middle" class="body">Check problem ID</text>
+<line x1="760" y1="650" x2="445" y2="650" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="595.0" y="640" text-anchor="middle" class="body">Simulated feedback</text>
+<rect x="35" y="695" width="1555" height="280" rx="0" fill="none" stroke="#536779" stroke-width="1.5"/>
+<rect x="35" y="695" width="90" height="28" rx="0" fill="#e8f3fb" stroke="#536779" stroke-width="1"/>
+<text x="80" y="715" text-anchor="middle" class="label">opt  Submit solution</text>
+<line x1="120" y1="735" x2="415" y2="735" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="275.0" y="725" text-anchor="middle" class="body">Click Submit</text>
+<line x1="430" y1="775" x2="745" y2="775" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="595.0" y="765" text-anchor="middle" class="body">POST /api/submissions</text>
+<line x1="760" y1="815" x2="1065" y2="815" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="920.0" y="805" text-anchor="middle" class="body">Validate problem ID</text>
+<line x1="760" y1="855" x2="1415" y2="855" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1095.0" y="845" text-anchor="middle" class="body">saveSubmission(...)</text>
+<line x1="1430" y1="895" x2="775" y2="895" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="1095.0" y="885" text-anchor="middle" class="body">Saved record</text>
+<line x1="760" y1="935" x2="1065" y2="935" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="920.0" y="925" text-anchor="middle" class="body">[accepted] set solved = true</text>
+<line x1="760" y1="975" x2="445" y2="975" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="595.0" y="965" text-anchor="middle" class="body">201 + status and metadata</text>
+<rect x="35" y="1000" width="1555" height="190" rx="0" fill="none" stroke="#536779" stroke-width="1.5"/>
+<rect x="35" y="1000" width="90" height="28" rx="0" fill="#e8f3fb" stroke="#536779" stroke-width="1"/>
+<text x="80" y="1020" text-anchor="middle" class="label">opt  View history</text>
+<line x1="430" y1="1040" x2="745" y2="1040" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="595.0" y="1030" text-anchor="middle" class="body">GET /api/submissions?problemId=...</text>
+<line x1="760" y1="1080" x2="1415" y2="1080" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1095.0" y="1070" text-anchor="middle" class="body">listSubmissions(problemId)</text>
+<line x1="1430" y1="1120" x2="775" y2="1120" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="1095.0" y="1110" text-anchor="middle" class="body">Submission metadata</text>
+<line x1="760" y1="1160" x2="445" y2="1160" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="595.0" y="1150" text-anchor="middle" class="body">200 + submission history</text>
+<rect x="35" y="1215" width="1555" height="190" rx="0" fill="none" stroke="#536779" stroke-width="1.5"/>
+<rect x="35" y="1215" width="90" height="28" rx="0" fill="#e8f3fb" stroke="#536779" stroke-width="1"/>
+<text x="80" y="1235" text-anchor="middle" class="label">opt  Create problem</text>
+<line x1="120" y1="1255" x2="415" y2="1255" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="275.0" y="1245" text-anchor="middle" class="body">Add custom problem</text>
+<line x1="430" y1="1295" x2="745" y2="1295" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="595.0" y="1285" text-anchor="middle" class="body">POST /api/problems</text>
+<line x1="760" y1="1335" x2="1065" y2="1335" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="920.0" y="1325" text-anchor="middle" class="body">Assign nextId; add to shared list</text>
+<line x1="1080" y1="1375" x2="775" y2="1375" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="920.0" y="1365" text-anchor="middle" class="body">New problem</text>
+<line x1="760" y1="1415" x2="445" y2="1415" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="7 6"/>
+<text x="595.0" y="1405" text-anchor="middle" class="body">201 + new problem</text>
+</svg>

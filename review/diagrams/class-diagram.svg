@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="790" viewBox="0 0 1520 790">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#18304b"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#18304b}.title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:16px}.small{font-size:14px;fill:#536779}.label{font-size:15px;fill:#1469a8;font-weight:600}</style>
+<text x="48" y="55" class="title">Class diagram · shared backend state</text>
+<rect x="65" y="160" width="270" height="225" rx="4" fill="white" stroke="#18304b" stroke-width="2"/>
+<rect x="65" y="160" width="270" height="76" rx="4" fill="#e8f3fb" stroke="#e8f3fb" stroke-width="0"/>
+<text x="200.0" y="188" text-anchor="middle" class="small">«browser UI»</text>
+<text x="200.0" y="215" text-anchor="middle" class="head">ReactClient</text>
+<line x1="65" y1="236" x2="335" y2="236" stroke="#18304b" stroke-width="2"/>
+<text x="83" y="265" text-anchor="start" class="body">- selectedProblem</text>
+<text x="83" y="294" text-anchor="start" class="body">- editorCode</text>
+<line x1="65" y1="311" x2="335" y2="311" stroke="#18304b" stroke-width="2"/>
+<text x="83" y="336" text-anchor="start" class="body">+ requestProblems()</text>
+<text x="83" y="364" text-anchor="start" class="body">+ submitCode()</text>
+<rect x="490" y="155" width="335" height="230" rx="4" fill="white" stroke="#18304b" stroke-width="2"/>
+<rect x="490" y="155" width="335" height="76" rx="4" fill="#e8f3fb" stroke="#e8f3fb" stroke-width="0"/>
+<text x="657.5" y="183" text-anchor="middle" class="small">«HTTP controller»</text>
+<text x="657.5" y="210" text-anchor="middle" class="head">ApiHandler</text>
+<line x1="490" y1="231" x2="825" y2="231" stroke="#18304b" stroke-width="2"/>
+<text x="508" y="260" text-anchor="start" class="body">+ GET /api/problems</text>
+<text x="508" y="289" text-anchor="start" class="body">+ POST /api/run</text>
+<line x1="490" y1="306" x2="825" y2="306" stroke="#18304b" stroke-width="2"/>
+<text x="508" y="331" text-anchor="start" class="body">+ POST /api/submissions</text>
+<text x="508" y="359" text-anchor="start" class="body">+ POST /api/problems</text>
+<rect x="1010" y="125" width="435" height="295" rx="4" fill="white" stroke="#18304b" stroke-width="2"/>
+<rect x="1010" y="125" width="435" height="76" rx="4" fill="#e8f3fb" stroke="#e8f3fb" stroke-width="0"/>
+<text x="1227.5" y="153" text-anchor="middle" class="small">«module-scoped singleton-like»</text>
+<text x="1227.5" y="180" text-anchor="middle" class="head">ProblemStore</text>
+<line x1="1010" y1="201" x2="1445" y2="201" stroke="#18304b" stroke-width="2"/>
+<text x="1028" y="230" text-anchor="start" class="body">- problems: Problem array</text>
+<text x="1028" y="259" text-anchor="start" class="body">- nextId: number</text>
+<line x1="1010" y1="276" x2="1445" y2="276" stroke="#18304b" stroke-width="2"/>
+<text x="1028" y="301" text-anchor="start" class="body">+ list / find problem</text>
+<text x="1028" y="329" text-anchor="start" class="body">+ add custom problem</text>
+<text x="1028" y="357" text-anchor="start" class="body">+ mark accepted problem solved</text>
+<rect x="1010" y="530" width="435" height="200" rx="4" fill="white" stroke="#18304b" stroke-width="2"/>
+<rect x="1010" y="530" width="435" height="76" rx="4" fill="#e8f3fb" stroke="#e8f3fb" stroke-width="0"/>
+<text x="1227.5" y="558" text-anchor="middle" class="small">«module service»</text>
+<text x="1227.5" y="585" text-anchor="middle" class="head">SubmissionRepository</text>
+<line x1="1010" y1="606" x2="1445" y2="606" stroke="#18304b" stroke-width="2"/>
+<text x="1028" y="635" text-anchor="start" class="body">- database: DatabaseSync</text>
+<line x1="1010" y1="652" x2="1445" y2="652" stroke="#18304b" stroke-width="2"/>
+<text x="1028" y="677" text-anchor="start" class="body">+ saveSubmission()</text>
+<text x="1028" y="705" text-anchor="start" class="body">+ listSubmissions()</text>
+<rect x="490" y="535" width="335" height="145" rx="4" fill="white" stroke="#18304b" stroke-width="2"/>
+<rect x="490" y="535" width="335" height="76" rx="4" fill="#e8f3fb" stroke="#e8f3fb" stroke-width="0"/>
+<text x="657.5" y="563" text-anchor="middle" class="small">«persistent storage»</text>
+<text x="657.5" y="590" text-anchor="middle" class="head">SQLite database</text>
+<line x1="490" y1="611" x2="825" y2="611" stroke="#18304b" stroke-width="2"/>
+<text x="508" y="640" text-anchor="start" class="body">- submissions table</text>
+<line x1="335" y1="250" x2="490" y2="250" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="412" y="235" text-anchor="middle" class="label">HTTP</text>
+<line x1="825" y1="255" x2="1010" y2="255" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="918" y="238" text-anchor="middle" class="label">reads / updates</text>
+<polyline points="825,350 916,350 916,610 1010,610" fill="none" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="925" y="482" text-anchor="start" class="label">uses</text>
+<line x1="1010" y1="645" x2="825" y2="645" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="918" y="672" text-anchor="middle" class="label">SQL</text>
+<text x="65" y="751" text-anchor="start" class="small">Conceptual UML: ProblemStore describes the state object in api.mjs; repository describes submissions.mjs.</text>
+</svg>

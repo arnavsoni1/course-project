@@ -1,12 +1,15 @@
 # Codegrid Docker CI/CD Assignment
 
-Codegrid is a React/Vite coding-practice interface. This repository includes a production Docker image and a Jenkins pipeline that builds, smoke-tests, and publishes the image to Docker Hub.
+Codegrid is a React/Vite coding-practice app with a Node API. The frontend loads problems from the API, can create custom problems, runs sample checks, and stores submissions in a local SQLite database.
 
 ## Project structure
 
 - `src/main.jsx` and `src/styles.css` — React application
-- `Dockerfile` — multi-stage Node build and Nginx runtime image
-- `nginx.conf` — static hosting, SPA fallback, caching, and security headers
+- `api.mjs` — API routes and in-memory problem store
+- `submissions.mjs` — SQLite storage for submitted code and submission history
+- `server.mjs` — production HTTP server for the API and built frontend
+- `Dockerfile` — multi-stage Node build and runtime image
+- `vite.config.js` — React setup and the development API middleware
 - `.dockerignore` — excludes development and assessment-only files
 - `Jenkinsfile` — checkout, application build, Docker build, smoke test, login, and push
 
@@ -18,20 +21,22 @@ npm run build
 npm run dev
 ```
 
-Vite normally serves the development site at `http://localhost:5173`.
+Vite normally serves the development site at `http://localhost:5173`, including the API through its development middleware. For a production-like local server, run `npm run build && npm start` and open `http://localhost:3000`.
+
+Submissions are saved in `data/codegrid.sqlite` by default (created automatically). Set `CODEGRID_DB_PATH` to use another file. `POST /api/submissions` saves the submitted code; `GET /api/submissions` lists submission metadata, optionally filtered with `?problemId=001`. This demo has no user accounts or access controls, so submissions are not separated by user. Sample checks are simulated; submitted code is never executed.
 
 ## Build and run with Docker
 
 ```sh
 docker build -t arnavsoni2007/codegrid:latest .
-docker run --detach --rm --name codegrid -p 8080:80 arnavsoni2007/codegrid:latest
+docker run --detach --rm --name codegrid -p 8080:3000 arnavsoni2007/codegrid:latest
 ```
 
 Open `http://localhost:8080`. In another terminal, verify the container:
 
 ```sh
 curl --fail http://localhost:8080/
-docker inspect --format='{{.State.Health.Status}}' codegrid
+curl --fail http://localhost:8080/api/health
 docker stop codegrid
 ```
 
@@ -48,13 +53,4 @@ docker stop codegrid
 
 Docker image references are lowercase, so the account `ArnavSoni2007` is published as `arnavsoni2007/codegrid`. If a different Docker Hub account is used, change `DOCKER_USERNAME` in `Jenkinsfile` before running the job.
 
-## Pipeline stages
-
-1. Checkout Code
-2. Install and Build Application
-3. Verify Docker
-4. Build Docker Image
-5. Smoke Test Image
-6. Login and Push to Docker Hub
-
-Credentials are injected only during the publish stage and are sent to `docker login` through standard input.
+For Docker persistence, mount a host directory at `/app/data`, for example add `-v "$PWD/data:/app/data"` to `docker run`. Otherwise the database is lost when the container is removed. Custom problems remain in memory and reset on restart; submissions and accepted progress for built-in problems persist in the SQLite file. Submissions for custom problems remain stored but their problem definitions are not restored.

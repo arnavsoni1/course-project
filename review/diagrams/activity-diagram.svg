@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1350" height="1280" viewBox="0 0 1350 1280">
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 Z" fill="#18304b"/></marker></defs>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#18304b}.title{font-size:30px;font-weight:700}.head{font-size:19px;font-weight:700}.body{font-size:16px}.small{font-size:14px;fill:#536779}.label{font-size:15px;fill:#1469a8;font-weight:600}</style>
+<text x="48" y="55" class="title">Activity diagram · practice and submit</text>
+<circle cx="675" cy="111" r="16" fill="#18304b"/>
+<rect x="520" y="155" width="310" height="64" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="675.0" y="193.0" text-anchor="middle" class="body">Load problem catalogue</text>
+<rect x="520" y="265" width="310" height="64" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="675.0" y="303.0" text-anchor="middle" class="body">Select a problem</text>
+<rect x="520" y="375" width="310" height="64" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="675.0" y="413.0" text-anchor="middle" class="body">Write or edit solution</text>
+<polygon points="675,462 790,520 675,578 560,520" fill="white" stroke="#18304b" stroke-width="2"/>
+<text x="675" y="525" text-anchor="middle" class="body">Run sample?</text>
+<rect x="145" y="620" width="325" height="72" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="307.5" y="650.0" text-anchor="middle" class="body">Apply heuristic check</text>
+<text x="307.5" y="674.0" text-anchor="middle" class="body">(no code execution)</text>
+<rect x="145" y="755" width="325" height="65" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="307.5" y="793.5" text-anchor="middle" class="body">Show simulated feedback</text>
+<rect x="865" y="625" width="330" height="72" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="1030.0" y="655.0" text-anchor="middle" class="body">Submit solution</text>
+<text x="1030.0" y="679.0" text-anchor="middle" class="body">and check code shape</text>
+<rect x="865" y="755" width="330" height="65" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="1030.0" y="793.5" text-anchor="middle" class="body">Save submission in SQLite</text>
+<polygon points="1030,849 1140,905 1030,961 920,905" fill="white" stroke="#18304b" stroke-width="2"/>
+<text x="1030" y="910" text-anchor="middle" class="body">Accepted?</text>
+<rect x="445" y="1005" width="340" height="66" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="615.0" y="1044.0" text-anchor="middle" class="body">Mark problem solved in store</text>
+<rect x="890" y="1005" width="280" height="66" rx="18" fill="#e8f3fb" stroke="#18304b" stroke-width="2"/>
+<text x="1030.0" y="1044.0" text-anchor="middle" class="body">Keep current solved flag</text>
+<line x1="675" y1="127" x2="675" y2="155" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="675" y1="219" x2="675" y2="265" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="675" y1="329" x2="675" y2="375" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="675" y1="439" x2="675" y2="462" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="560,520 308,520 308,620" fill="none" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="428" y="504" text-anchor="middle" class="label">yes</text>
+<polyline points="790,520 1030,520 1030,625" fill="none" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="901" y="504" text-anchor="middle" class="label">no / ready to submit</text>
+<line x1="308" y1="692" x2="308" y2="755" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="145,788 83,788 83,406 520,406" fill="none" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="91" y="585" text-anchor="start" class="label">revise or continue</text>
+<line x1="1030" y1="697" x2="1030" y2="755" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="1030" y1="820" x2="1030" y2="849" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="920,905 615,905 615,1005" fill="none" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="776" y="888" text-anchor="middle" class="label">yes</text>
+<line x1="1030" y1="961" x2="1030" y2="1005" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1050" y="988" text-anchor="start" class="label">no</text>
+<line x1="615" y1="1071" x2="615" y2="1120" stroke="#18304b" stroke-width="2"/>
+<line x1="1030" y1="1071" x2="1030" y2="1120" stroke="#18304b" stroke-width="2"/>
+<line x1="615" y1="1120" x2="1030" y2="1120" stroke="#18304b" stroke-width="2"/>
+<line x1="823" y1="1120" x2="823" y2="1175" stroke="#18304b" stroke-width="2" marker-end="url(#arrow)"/>
+<circle cx="823" cy="1195" r="19" fill="white" stroke="#18304b" stroke-width="2"/>
+<circle cx="823" cy="1195" r="12" fill="#18304b"/>
+<text x="675" y="1250" text-anchor="middle" class="small">Response shown; student may view history or try another problem.</text>
+</svg>
