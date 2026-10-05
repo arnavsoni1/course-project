@@ -11,7 +11,7 @@ Codegrid is a React/Vite coding-practice app with a Node API. The frontend loads
 - `Dockerfile` — multi-stage Node build and runtime image
 - `vite.config.js` — React setup and the development API middleware
 - `.dockerignore` — excludes development and assessment-only files
-- `simple-maven-app/` — the Maven/JUnit project used by the CI test stage
+- `pom.xml` — Maven build wrapper that provisions Node/npm and builds the JavaScript application
 - `Jenkinsfile` — checkout, Maven test, Docker build, smoke test, login, and push
 
 ## Run locally
@@ -51,7 +51,7 @@ docker stop codegrid
    - ID: `dockerhub-cred`
 4. Create a **Pipeline** job and choose **Pipeline script from SCM**.
 5. Select **Git**, enter this repository URL, set the branch to `*/main`, and keep the script path as `Jenkinsfile`.
-6. Run **Build Now**. Maven tests run before the Docker image is built or pushed. The numbered tag and `latest` are pushed only after all checks pass.
+6. Run **Build Now**. Maven provisions Node/npm and runs `npm ci` plus `npm run build` before the Docker image is built or pushed. The numbered tag and `latest` are pushed only after all checks pass.
 
 Docker image references are lowercase, so the account `ArnavSoni2007` is published as `arnavsoni2007/codegrid`. If a different Docker Hub account is used, change `DOCKER_USERNAME` in `Jenkinsfile` before running the job.
 

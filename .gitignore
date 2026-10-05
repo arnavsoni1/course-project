@@ -6,7 +6,7 @@ data/
 dist/
 dist-ssr/
 coverage/
-simple-maven-app/target/
+target/
 
 # Tool caches
 .vite/

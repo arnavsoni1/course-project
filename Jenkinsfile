@@ -16,11 +16,9 @@ pipeline {
             }
         }
 
-        stage('Build and Test Maven Project') {
+        stage('Build JavaScript with Maven') {
             steps {
-                dir('simple-maven-app') {
-                    bat 'mvn clean test'
-                }
+                bat 'mvn clean verify'
             }
         }
 
