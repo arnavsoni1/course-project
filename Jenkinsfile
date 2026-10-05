@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'M3'
+    }
+
     environment {
         IMAGE = 'arnavsoni2007/codegrid'
     }
@@ -9,6 +13,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Build and Test Maven Project') {
+            steps {
+                dir('simple-maven-app') {
+                    bat 'mvn clean test'
+                }
             }
         }
 
@@ -21,7 +33,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
-                    credentialsId: 'docker-creds',
+                    credentialsId: 'dockerhub-cred',
                     usernameVariable: 'DOCKERHUB_USER',
                     passwordVariable: 'DOCKERHUB_TOKEN'
                 )]) {

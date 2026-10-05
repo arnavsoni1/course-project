@@ -11,7 +11,8 @@ Codegrid is a React/Vite coding-practice app with a Node API. The frontend loads
 - `Dockerfile` — multi-stage Node build and runtime image
 - `vite.config.js` — React setup and the development API middleware
 - `.dockerignore` — excludes development and assessment-only files
-- `Jenkinsfile` — checkout, application build, Docker build, smoke test, login, and push
+- `simple-maven-app/` — the Maven/JUnit project used by the CI test stage
+- `Jenkinsfile` — checkout, Maven test, Docker build, smoke test, login, and push
 
 ## Run locally
 
@@ -42,14 +43,15 @@ docker stop codegrid
 
 ## Configure Jenkins
 
-1. Install the **Git**, **Pipeline**, and **Credentials Binding** plugins. Docker must be installed and usable by the Jenkins service account.
-2. In **Manage Jenkins → Credentials → System → Global credentials**, add a **Username with password** credential:
+1. Install the **Git**, **Pipeline**, **Credentials Binding**, and **Maven Integration** plugins. Docker must be installed and usable by the Jenkins service account.
+2. In **Manage Jenkins → Tools**, add a Maven installation named `M3`. Either configure the installed Maven home or enable Jenkins-managed installation.
+3. In **Manage Jenkins → Credentials → System → Global credentials**, add a **Username with password** credential:
    - Username: Docker Hub username (`ArnavSoni2007` for the checked-in pipeline)
    - Password: a Docker Hub access token
    - ID: `dockerhub-cred`
-3. Create a **Pipeline** job and choose **Pipeline script from SCM**.
-4. Select **Git**, enter this repository URL, set the branch to `*/main`, and keep the script path as `Jenkinsfile`.
-5. Run **Build Now**. The numbered tag and `latest` are pushed only after the application build and image smoke test pass.
+4. Create a **Pipeline** job and choose **Pipeline script from SCM**.
+5. Select **Git**, enter this repository URL, set the branch to `*/main`, and keep the script path as `Jenkinsfile`.
+6. Run **Build Now**. Maven tests run before the Docker image is built or pushed. The numbered tag and `latest` are pushed only after all checks pass.
 
 Docker image references are lowercase, so the account `ArnavSoni2007` is published as `arnavsoni2007/codegrid`. If a different Docker Hub account is used, change `DOCKER_USERNAME` in `Jenkinsfile` before running the job.
 
